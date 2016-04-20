@@ -10,6 +10,9 @@ ENV GOLANG_BOOTSTRAP_SHA1 486db10dc571a55c8d795365070f66d343458c48
 
 COPY no-pic.patch /
 
+#set timezone to CST
+RUN echo "Asia/shanghai" > /etc/timezone;
+
 RUN set -ex \
 	&& apk add --no-cache --virtual .build-deps \
 		bash \
